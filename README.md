@@ -34,6 +34,8 @@ web2                      running (virtualbox)
 
 # Step 3: 
 
+Login into mgmt ( Ansible ) node by using the command "vagrant ssh mgmt" from your linux machine.
 
+In the home directory
 
 
