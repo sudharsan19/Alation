@@ -19,7 +19,7 @@ Note : Make sure vagrant is installed on the linux box ( https://www.vagrantup.c
 
 # Step 2: 
 
-Once Cloned the git repository, go to environment directory and run "vagrant up" command. Now the vagrant instances will be created Ansible management, Load balancer and 2 Web Servers.
+Once Cloned the git repository, go to environment directory and run "vagrant up" command. Now the vagrant instances for Ansible management, Load balancer and 2 Web Servers will be created.
 
 #vagrant status
 
@@ -92,3 +92,42 @@ Ansible provisioner automatically deploy the application by using the bash scrip
 Use the LB ip address to test the load balancing method between webserver1 & webserver2.
 or use curl command from any one of the node to test the configuration/working logic.
 
+vagrant@mgmt:~$ curl -I  http://lb
+
+HTTP/1.1 200 OK
+
+Server: nginx
+
+Date: Sun, 27 May 2018 14:45:06 GMT
+
+Content-Type: text/html
+
+Content-Length: 483
+
+X-Backend-Server: web1
+
+Cache-Control: private
+
+Accept-Ranges: bytes
+
+vagrant@mgmt:~$ curl -I  http://lb
+
+HTTP/1.1 200 OK
+
+Server: nginx
+
+Date: Sun, 27 May 2018 14:45:08 GMT
+
+Content-Type: text/html
+
+Content-Length: 483
+
+X-Backend-Server: web2
+
+Cache-Control: private
+
+Accept-Ranges: bytes
+
+vagrant@mgmt:~$
+
+Note: Check the Backend-Server information from the curl output to verify which webserver serve the request.
