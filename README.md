@@ -8,6 +8,8 @@ lb - HaProxy Load Balancer Node
 
 web1 & web2 - Ngnix Web Server Nodes
 
+Note: login user: vagrant , password: vagrant 
+
 
 # Step 1: 
 
@@ -64,20 +66,29 @@ Run the bash script "post_install.sh" to provision the application using ansible
 
 vagrant@mgmt:~$ bash post_install.sh
 
-# lb SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
+#lb SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
 
-# lb SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
+#lb SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
 
-# web1 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
+#web1 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
 
-# web1 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
+#web1 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
 
-# web2 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
+#web2 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
 
-# web2 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
+#web2 SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.10
 
 Deploying Application Roles , please enter the ssh password for the user vagrant to proceed:
 SSH password:
 
 Note : Bash script prompt for the password for the user vagrant to deploy the application roles in the respecitve server by using ansible. ( SSH Password : vagrant ) 
+
+# Step 5: 
+
+Ansible provisioner automatically deploy the application by using the bash script. Now you can login to the load balancer from the management node to verify the haproxy configurations as well as login into web server from management node to verify the ngnix configuration.
+
+# Step 6: 
+
+Use the LB ip address to test the load balancing method between webserver1 & webserver2.
+or use curl command from any one of the node to test the configuration/working logic.
 
